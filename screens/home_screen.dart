@@ -19,6 +19,19 @@ class HomeScreen extends StatelessWidget {
             onPressed: () {
               _showAboutDialog(context);
             },
+          IconButton(
+            icon: Icon(
+              // Icon berubah berdasarkan tema
+              themeProvider.isDarkMode ? Icons.light_mode : Icons.dark_mode,
+            ),
+            onPressed: () {
+              // Toggle langsung tanpa if-else
+              themeProvider.toggleTheme();
+            },
+            tooltip: themeProvider.isDarkMode
+                ? 'Switch to Light Mode'
+                : 'Switch to Dark Mode',
+          )
           ),
         ],
       ),
